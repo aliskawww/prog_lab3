@@ -1,0 +1,24 @@
+package Actions;
+
+import Stuff.EActions;
+
+import java.util.Random;
+
+public class Doubt extends Actions {
+    Random rand = new Random();
+    @Override
+    public String executeAction() {
+        int n = rand.nextInt(0,3);
+        return switch (n) {
+            case 0 -> "уже не сомневалась";
+            case 1 -> "начала сомневаться";
+            default -> "перестала сомневаться";
+        };
+    }
+
+    @Override
+    public EActions getType() {
+        return EActions.DOUBT;
+    }
+}
+
